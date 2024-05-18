@@ -1,0 +1,2189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Validation</title>
+<style>
+    .page-break {
+    page-break-before: always;
+}
+
+/* Style for the table container */
+body{
+    margin:auto;
+}
+
+.table-container {
+    width: 100%;
+    margin:0 auto;
+}
+
+
+
+
+
+
+/* Style for the table */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* Style for table rows */
+tr {
+    border: 1px solid black; /* Add border to each row */
+}
+
+/* Style for table data cells */
+td {
+    padding: 8px;
+    border: none; /* Remove border for data cells */
+    text-align: left; /* Align text to the left */
+    font-size: 16px; /* Reduce font size */
+    position: relative; /* Enable relative positioning */
+}
+
+
+
+
+/* Style for text input */
+input[type="text"] {
+    width: calc(100% - 16px); /* Adjust width to account for padding */
+    padding: 8px;
+    border: none; /* Remove border for text input */
+    box-sizing: border-box;
+    font-size: 16px; /* Reduce font size */
+}
+
+/* Style for the center line */
+td::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0; /* Align the line to the right */
+    width: 1px;
+    background-color: black;
+}
+
+/* Style for the outer border */
+.outer-box {
+    border: 1px solid black; /* Set border properties */
+    width: 87%; /* Set width of the box */
+    margin: 0 auto; /* Center the box horizontally */
+    padding: 20px; /* Add padding for spacing */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Set flex direction to column */
+   /* Center items horizontally */
+}
+
+.center{
+    text-align: center;
+}
+/* Style for the headline */
+.headline {
+    font-size: 18px; /* Set font size for the headline */
+    /*margin-bottom: 10px;  Add margin at the bottom */
+    text-align: left; /* Align text to the left */
+}
+
+/* Signature Container */
+/* Signature Container */
+.signature-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 70px; /* Adjust margin as needed */
+}
+
+/* Signature */
+.signature {
+    width: 45%; /* Adjust width as needed */
+    position: relative; /* Ensure relative positioning for absolute positioning of upload button */
+}
+
+/* Siemens Representative */
+.signature.left {
+    text-align: left;
+}
+
+/* Railway Representative */
+.signature.right {
+    text-align: right;
+}
+
+/* Upload Button */
+.upload-button {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+
+  table {
+    width: 90%;
+    margin: 0 auto;
+  }
+  #table1 {
+    border-collapse: collapse; /* Collapse table borders */
+    width: 90%; /* Set table width */
+  }
+  #table1 th {
+    border: 1px solid black; /* Add border to all table headers */
+    padding: 8px; /* Add padding for better appearance */
+  }
+  #table1 th:not(:last-child) {
+    border-right: none; /* Remove right border for all table headers except the last one */
+  }
+  h2 {
+    position: relative; /* Set the position of the heading to relative */
+    margin-bottom: 20px; /* Add bottom margin for spacing */
+    padding-left: 190px; /* Add padding to the left */
+  }
+  h2 span:first-child {
+    position:relative; /* Set the position of the first span to absolute */
+    padding-left:70;  /* Position the first span at the left edge of the h2 */
+  }
+  /* Style for the upload button */
+
+
+
+
+  
+
+
+</style>
+
+
+</head>
+
+    <body>
+        <table id="table1">
+            <tr>
+                <th>Page 2 of 34</th>
+                <th>Document no.:SI-G-7.1-0624</th>
+                <th>Version:2.0</th>
+                <th>Date of issue:19.11.2019</th>
+            </tr>
+            <tr><td colspan="4" style="text-align:center;">Title:Pre-commissioning Check List of Multi Section Digital axle Counter MSDAC Model:ACM 200<br>(Another variant)
+                and Track side Equipment ZP D 43 of M/s Siemens India Ltd.,Mumbai.</td>
+                
+            </tr>
+        </table>
+        <div class="table-container">
+            <h2 style="text-align: center;"><span>3.</span><span ><u><b>General Information</b></u></span></h2>
+            <table>
+                <tr>
+                    <td style="width:5%">1.</td>
+                    <td style="width:25%">Station/Yard Name:</td>
+                    <td><input type="text" id="stationName" name="stationName" required></td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td>Division/Zonal Railway:</td>
+                    <td>
+                        <select id="division" name="division" required>
+                            <option value="">Select</option>
+                            <option value="Eastern Railway">Eastern Railway</option>
+                            <option value="Northern Railway">Northern Railway</option>
+                            <option value="Southern Railway">Southern Railway</option>
+                            <option value="Central Railway">Southern Railway</option>
+                            
+                        </select>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td>Contact Details Of Railways at HQ/Division:</td>
+                    <td><input type="text" id="contactDetails" name="contactDetails" required></td>
+                </tr>
+                <tr>
+                    <td rowspan="4">4.</td>
+                    <td>Details of Modules (Refer Annexure E & F)</td>
+                    <td><input type="text" id="moduleDetails" name="moduleDetails" required></td>
+                </tr>
+              
+                <tr>
+                    <td>Nos. of ACM Modules</td>
+                    <td><input type="number" id="ACM" name="ACM" required></td>
+                </tr>
+                <tr>
+                    <td>Nos. of ZP D43</td>
+                    <td><input type="number" id="D43" name="D43" required></td>
+                </tr>
+                <tr>
+                    <td>Total Nos. of Detections & sections</td>
+                    <td><input type="number" id="Det" name="Det" required></td>
+                </tr>
+                
+                
+                <tr>
+                    <td>5.</td>
+                    <td>Contract Agreement /LOA/PO No.</td>
+                    <td><input type="text" id="contractNo" name="contractNo" required></td>
+                </tr>
+                <tr>
+                    <td>6.</td>
+                    <td>Date of Pre-Commissioning Inspection</td>
+                    <td><input type="date" id="inspectionDate" name="inspectionDate" required></td>
+                </tr>
+                <tr>
+                    <td>7.</td>
+                    <td>Firm’s (Siemens) Engineer </td>
+                    <td><input type="text" id="firm" name="firm" required></td>
+                </tr>
+                <tr>
+                    <td>8.</td>
+                    <td>Checksum of ACM Module <br>
+                        [Can be seen as MD4 Binary file of ACM 200 
+                        Software on diagnostic Web Page] 
+                        ( Refer Annexure I )  </td>
+                    <td><input type="text" id="check" name="check" required></td>
+                </tr>
+                <tr>
+                    <td>9.</td>
+                    <td>Imparted Training or Not</td>
+                    <td>
+                        <select id="impart" name="impart" required>
+                            <option value="">Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                </tr>
+    
+            </table>
+           
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="outer-box">
+            <div class="headline" style="text-align: left;"><u>Note:</u></div>
+            <div>
+                <p>(1) The system should be installed and commissioned by authorized technical staff of M/S SIEMENS.</p>
+                <p>(2) Tools used by authorized technical staff of M/S SIEMENS should be proper and calibrated.</p>
+                <p>(3) The installation practices should be strictly adhered to and checked before commissioning.</p>
+                <p>(4) All points should be covered as provided in the pre-commissioning checklist.</p>
+            </div>
+        </div>
+        
+        
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    
+        
+            <div class="signature-container left">
+                <div class="signature">
+                    <label for="signatureImage1" class="upload-button" id="uploadButton1"></label>
+                    <input type="file" id="signatureImage1" accept="image/*" required>
+                    <p>Signature of Siemens Representative:</p>
+                    <p>With Name, Designation & Date</p>
+                </div>
+            </div>
+            <div class="signature-container right">
+                <div class="rsign">
+                    <label for="signatureImage2" class="upload-button" id="uploadButton2"></label>
+                        <input type="file" id="signatureImage2" accept="image/*" required>
+                    
+                    <p>Signature of Railway Representative:</p>
+                    <p>With Name, Designation & Date</p>
+                </div>
+            </div>
+        
+        <div class="page-break"></div>
+               
+            
+            <table id="table1">
+                <tr>
+                    <th>Page 3 of 34</th>
+                    <th>Document no.:SI-G-7.1-0624</th>
+                    <th>Version:2.0</th>
+                    <th>Date of issue:19.11.2019</th>
+                </tr>
+                <tr><td colspan="4" style="text-align:center;">Document Title:Pre-commissioning Check List of Multi Section Digital axle Counter MSDAC Model:ACM 200<br>(Another variant)
+                    and Track side Equipment ZP D 43 of M/s Siemens India Ltd.,Mumbai.</td>
+                    
+                </tr>
+            </table>
+            <div class="table-container">
+                <h2><span>4.</span><span ><u><b>Outdoor (Rail Contact also called track device):</b></u></span></h2>
+                <table>
+                    <tr>
+                        
+                        <td style="width:2%;text-align:center"><b>Sr.<br>No.</b></td>
+                        <td style="width:15%;text-align:center"><b>Item</b></td>
+                        <td style="width:20%;text-align:center"><b>Required</b></td>
+                        <td style="width:25%;text-align:center"><b>Measured<br>/Observed</b> </td>
+                        <td style="width:25%;text-align:center"><b>Remarks<br>(Ok/Not ok)</b></td>
+                    </tr>
+                    <tr>
+                        <td>4.1</td>
+                        <td>Embossing on the rail<br>web.</td>
+                        <td>No embossing on the rail web<br>where holes are to be drilled.</td>   
+                        <td><input type="text" id="Embrossing" name="Embrossing" required></td>
+                        <td>
+                            <select id="remarks01" name="remarks01" required>\
+                                <option value="">Select</option>
+                                <option value="OK">OK</option>
+                                <option value="NOT OK">NOT OK</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4.2</td>
+                        <td>Clearance between<br>Sleepers.</td>
+                        <td>There should be 350mm (Min.)<br>between the sleepers where the<br>sensors are mounted.</td>   
+                        <td><input type="text" id="Clearance" name="Clearance" required></td>
+                        <td>
+                            <select id="remarks02" name="remarks02" required>\
+                                <option value="">Select</option>
+                                <option value="OK">OK</option>
+                                <option value="NOT OK">NOT OK</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4.3</td>
+                        <td>Rail Height </td>
+                        <td>60 Kg : 159mm-172mm <br>52 Kg : 148mm-156mm<br>90 R : 138mm-143mm</td>   
+                        <td>
+                            <select id="Height" name="Height" required>\
+                                <option value="">Select</option>
+                                <option value="60 Kg : 159mm-172mm">60 Kg : 159mm-172mm</option>
+                                <option value="52 Kg : 148mm-156mm">52 Kg : 148mm-156mm</option>
+                                <option value="90 R : 138mm-143mm">90 R : 138mm-143mm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select id="remarks03" name="remarks03" required>\
+                                <option value="">Select</option>
+                                <option value="OK">OK</option>
+                                <option value="NOT OK">NOT OK</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4.4</td>
+                        <td>Position of mounting<br>holes on rail.</td>
+                        <td>60 Kg: 85mm +1.5mm <br>52 Kg: 69mm +1.5mm<br>90 R: 56mm +1.5mm<br>Measured from the bottom of the<br>Rail.</td>   
+                        <td>
+                            <select id="Hole" name="Hole" required>\
+                                <option value="">Select</option>
+                                <option value="60 Kg: 85mm +1.5mm ">60 Kg: 85mm +1.5mm </option>
+                                <option value="52 Kg: 69mm +1.5mm">52 Kg: 69mm +1.5mm</option>
+                                <option value="90 R: 56mm +1.5mm">90 R: 56mm +1.5mm</option> 
+                            </select>
+                        </td>
+                        <td>
+                            <select id="remarks04" name="remarks04" required>\
+                                <option value="">Select</option>
+                                <option value="OK">OK</option>
+                                <option value="NOT OK">NOT OK</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4.5</td>
+                        <td>Diameter of the mounting<br>holes.</td>   
+                        <td>Should be of 13mm dia.  </td>
+                        <td>
+                            <select id="Diameter" name="Diameter" required>\
+                                <option value="">Select</option>
+                                <option value="13mm">13mm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select id="remarks05" name="remarks05" required>\
+                                <option value="">Select</option>
+                                <option value="OK">OK</option>
+                                <option value="NOT OK">NOT OK</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4.6</td>
+                        <td>Selection of rail for<br>mounting trackside<br>device (wheel sensor).</td>
+                        <td>a) The Rail on which the wheel 
+                            <br>sensor is mounted can be either<br>rail on a straight track where<br>both rails are at the same<br>height.<br>b) On a curved track the wheel<br>sensor must always be mounted<br>on the outer rail with respect to<br>the curvature, i.e. rail farthest
+                            <br>from the Centre of curvature, or <br>on the rail which is higher than<br>the other.
+                        </td>   
+                        <td><input type="text" id="Rail" name="Rail" required></td>
+                        <td>
+                            <select id="remarks06" name="remarks06" required>\
+                                <option value="">Select</option>
+                                <option value="OK">OK</option>
+                                <option value="NOT OK">NOT OK</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4.7</td>
+                        <td>Fixing of rail contacts<BR>(Trackside Device) & <BR>Transmitter and Receiver <BR>reduction plates. 
+                        </td>  
+                        <td>Transmitter part having label 
+                            <br>("SENDER") to be fixed on the<br>Outside of the rail.<BR><BR>Receiver part having label<BR> 
+                                ("EMPFANGER") to be fixed on the<BR>
+                                inside of the rail.<BR><BR>
+                                Reduction plates matching the rail<BR> 
+                                profile to be fitted against the rail<BR>
+                                web. 
+                                 </td>   
+                        <td><input type="text" id="TRANSMITTER" name="TRANSMITTER" required></td>
+                        <td>
+                            <select id="remarks07" name="remarks07" required>\
+                                <option value="">Select</option>
+                                <option value="OK">OK</option>
+                                <option value="NOT OK">NOT OK</option>
+                            </select>
+                        </td>
+                    </tr>
+        
+                </table>
+            
+           
+                <br>
+                         <!-- Signature Container -->
+         <!-- Signature Container -->
+         <div class="signature-container">
+            <!-- Siemens Representative Signature -->
+            <div class="signature left">
+                <label for="signatureImage1" class="upload-button"></label>
+                <input type="file" id="signatureImage1" accept="image/*" required>
+                <p>Signature of Siemens Representative:</p>
+                <p>With Name, Designation & Date</p>
+            </div>
+            
+            <!-- Railway Representative Signature -->
+            <div class="signature right">
+                <label for="signatureImage2" class="upload-button"></label>
+                <input type="file" id="signatureImage2" accept="image/*" required>
+                <p>Signature of Railway Representative:</p>
+                <p>With Name, Designation & Date</p>
+            </div>
+        </div>
+        
+                <div class="page-break"></div>
+                <table id="table1">
+                    <tr>
+                        <th>Page 4 of 34</th>
+                        <th>Document no.:SI-G-7.1-0624</th>
+                        <th>Version:2.0</th>
+                        <th>Date of issue:19.11.2019</th>
+                    </tr>
+                    <tr><td colspan="4" style="text-align:center;">Title:Pre-commissioning Check List of Multi Section Digital axle Counter MSDAC Model:ACM 200<br>(Another variant)
+                        and Track side Equipment ZP D 43 of M/s Siemens India Ltd.,Mumbai.</td>
+                        
+                    </tr>
+                </table>
+                <br>
+                
+                <div class="table-container">
+                   
+                    <table>
+                    
+                        <tr>
+                            <td style="width:2%">4.8</td>
+                            <td style="width:15%">Fixing of Sensor clamps </td>
+                            <td style="width:22%">The sensor clamps should be fixed <br>
+                                properly to reduce vibration on Tx <br>
+            & Rx side</td>   
+                            <td style="width:25%"><input type="text" id="clamps" name="clamps" required></td>
+                            <td style="width:25%">
+                                <select id="remarks1" name="remarks1" required>
+                                    <option value="">Select</option>
+                                    <option value="OK">OK</option>
+                                    <option value="NOT OK">NOT OK</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4.9</td>
+                            <td>Nuts, bolts & washers for 
+                                 <br>fixing the rail contacts.</td>
+                            <td>The Nuts, Bolts (2 each) and<br>washers supplied with the rail <br>contacts must be used for fixing<br>the rail contacts. 
+            <br> The bolts must be inserted from<br> the receiver side              </td>   
+                            <td><input type="text" id="bolt" name="bolt" required></td>
+                            <td>
+                                <select id="remarks2" name="remarks2" required>
+                                    <option value="">Select</option>
+                                    <option value="OK">OK</option>
+                                    <option value="NOT OK">NOT OK</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4.10</td>
+                            <td>Torque applied to tighten <br>the rail contacts. 
+                            </td>
+                            <td>45 Nm ± 5 using the torque wrench <br>Supplied with the tool kit. </td>   
+                           <td><input type="text" id="tight" name="tight" required></td>
+                            <td>
+                                <select id="remarks3" name="remarks3" required>
+                                    <option value="">Select</option>
+                                    <option value="OK">OK</option>
+                                    <option value="NOT OK">NOT OK</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4.11</td>
+                            <td> Exposed Tx and Rx cables <br>between DWC/HDPE pipe<br>and the heads. 
+                            </td>
+                            <td style="text-align: justify;">Should be free from obstruction  <br>and have adequate radius of <br>curvature</td>   
+                            <td>
+                                <input type="text" id="rx" name="rx" required>
+                            </td>
+                            <td>
+                                <select id="remarks4" name="remarks4" required>
+                                    <option value="">Select</option>
+                                    <option value="OK">OK</option>
+                                    <option value="NOT OK">NOT OK</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4.12</td>
+                            <td>Protection of Tx and Rx 
+                                <br>cables.</td>   
+                            <td>Both Tx and Rx cables must be <br>protected through DWC/HDPE pipe<br> at least 80 mm with outer dia.</td>
+                            <td>
+                                <input type="text" id="dwc" name="dwc" required>
+                            </td>
+                            <td>
+                                <select id="remarks5" name="remarks5" required>
+                                    <option value="">Select</option>
+                                    <option value="OK">OK</option>
+                                    <option value="NOT OK">NOT OK</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4.13</td>
+                            <td> Position of deflectors. </td>
+                            <td>To be fitted at least 450 mm away <br>from the rail contacts on either <br>side</td>   
+                            <td><input type="text" id="a450" name="a450" required></td>
+                            <td>
+                                <select id="remarks6" name="remarks6" required>
+                                    <option value="">Select</option>
+                                    <option value="OK">OK</option>
+                                    <option value="NOT OK">NOT OK</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4.14</td>
+                            <td>Height of Deflectors <br>Sleepers.</td>
+                            <td>To be adjusted as per the rail <br>profile.</td>   
+                            <td><input type="text" id="Sleepers" name="Sleepers" required></td>
+                            <td>
+                                <select id="remarks7" name="remarks7" required>
+                                    <option value="">Select</option>
+                                    <option value="OK">OK</option>
+                                    <option value="NOT OK">NOT OK</option>
+                                </select>
+                            </td>
+                        </tr>
+                        </table>
+            <br>
+            
+                <h2 style="text-align:center;"><span>4.</span><span ><u><b>Outdoor(Location Box / Mushroom Cover / Dust cover): </b></u></span></h2>
+                <br>
+                <table>
+                    <tr >
+                        <td style="width:2%;text-align: center"><b>Sr.<br>No.</b></td>
+                        <td style="width:15%;text-align: center"><b>Item</b></td>
+                        <td style="width:20%;text-align: center"><b>Required</b></td>
+                        <td style="width:25%;text-align: center"><b>Measured<br>/Observed</b> </td>
+                        <td style="width:25%;text-align: center"><b>Remarks<br>(Ok/Not ok)</b></td>
+                    </tr>
+                    <tr>
+                        <td>5.1</td>
+                        <td>Foundation along with<br>Trackside connection box</td>
+                        <td>Should be firm, <br>Straight within permissible height<br>and should not infringe with the 
+            <br>Railways SOD.             </td>   
+                        <td><input type="text" id="sod" name="sod" required></td>
+                        <td>
+                            <select id="remarks8" name="remarks8" required>
+                                <option value="">Select</option>
+                                <option value="OK">OK</option>
+                                <option value="NOT OK">NOT OK</option>
+                            </select>
+                        </td>
+            
+                    </tr>
+                    <tr>
+                        <td>5.2</td>
+                        <td>Trackside connection Box<br>with yellow plastic cover.<br>Installed either inside<br>Location box or outside of <br>Location box. </td>
+                        <td>To be fitted firm and tightened             </td>   
+                        <td><input type="text" id="yell" name="yell" required></td>
+                        <td>
+                            <select id="remarks9" name="remarks9" required>
+                                <option value="">Select</option>
+                                <option value="OK">OK</option>
+                                <option value="NOT OK">NOT OK</option>
+                            </select>
+                        </td>
+            
+                    </tr>
+                    <tr>
+                        <td>5.3</td>
+                        <td>Water tight rubber<br>grommets (washers with <br>metal rings) in the cable<br>glands. </td>
+                        <td>To be used properly with all rail <br> contacts cables and quad cable <br>through them and tightened.        </td>   
+                        <td><input type="text" id="grom" name="grom" required></td>
+                        <td>
+                            <select id="remarks10" name="remarks10" required>
+                                <option value="">Select</option>
+                                <option value="OK">OK</option>
+                                <option value="NOT OK">NOT OK</option>
+                            </select>
+                        </td>
+            
+                    </tr>
+                    </table>
+            
+                   <!-- Signature Container -->
+         <!-- Signature Container -->
+         <div class="signature-container">
+            <!-- Siemens Representative Signature -->
+            <div class="signature left">
+                <label for="signatureImage1" class="upload-button"></label>
+                <input type="file" id="signatureImage1" accept="image/*" required>
+                <p>Signature of Siemens Representative:</p>
+                <p>With Name, Designation & Date</p>
+            </div>
+            
+            <!-- Railway Representative Signature -->
+            <div class="signature right">
+                <label for="signatureImage2" class="upload-button"></label>
+                <input type="file" id="signatureImage2" accept="image/*" required>
+                <p>Signature of Railway Representative:</p>
+                <p>With Name, Designation & Date</p>
+            </div>
+        </div>
+        
+
+          
+        <div class="page-break"></div>
+      
+        <table id="table1">
+            <tr>
+                <th>Page 5 of 34</th>
+                <th>Document no.:SI-G-7.1-0624</th>
+                <th>Version:2.0</th>
+                <th>Date of issue:19.11.2019</th>
+            </tr>
+            <tr><td colspan="4" style="text-align:center;">Document Title:Pre-commissioning Check List of Multi Section Digital axle Counter MSDAC Model:ACM 200<br>(Another variant)
+                and Track side Equipment ZP D 43 of M/s Siemens India Ltd.,Mumbai.</td>
+                
+            </tr>
+        </table>
+        <br>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <td style="width:2%">5.4</td>
+                    <td style="width:15%">Neoprene rings and<br>fastening clips.</td>
+                    <td style="width:20%">Rings to be used and fixed in place<br>for all cables into the mushroom<br>box and clamp with fastening clips <br>provided</td>   
+                    <td style="width:25%"><input type="text" id="Neoprene" name="Neoprene" required></td>
+                    <td>
+                        <select id="remarks001" name="remarks001" required>\
+                            <option value="">Select</option>
+                            <option value="OK">OK</option>
+                            <option value="NOT OK">NOT OK</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td >5.5</td>
+                    <td style="text-align: justify;">Water-tightness of cable 
+                        glands. 
+                        </td>
+                    <td style="text-align: justify;">All cable glands to be made water 
+                        tight using silicon rubber solution 
+                        or equivalent.</td>   
+                    <td><input type="text" id="tightness" name="tightness" required></td>
+                    <td>
+                        <select id="remarks002" name="remarks002" required>\
+                            <option value="">Select</option>
+                            <option value="OK">OK</option>
+                            <option value="NOT OK">NOT OK</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5.6</td>
+                    <td style="text-align: justify;">Rubber gasket in the 
+                        mushroom cover </td>
+                    <td style="text-align: justify;">Should be one single continuous 
+                        piece fitted snugly in its groove.</td>   
+                    <td><input type="text" id="gasket" name="gasket" required></td>
+                    <td>
+                        <select id="remarks003" name="remarks003" required>\
+                            <option value="">Select</option>
+                            <option value="OK">OK</option>
+                            <option value="NOT OK">NOT OK</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5.7</td>
+                    <td style="text-align: justify;">Closing of the trackside 
+                        connection box with 
+                        yellow plastic cover. 
+                        </td>
+                    <td style="text-align: justify;">The yellow plastic cover must be 
+                        fixed by tightening all four bolts at 
+                        the four corners of the cover. 
+                        </td>   
+                    <td><input type="text" id="trackside" name="trackside" required></td>
+                    <td>
+                        <select id="remarks004" name="remarks004" required>\
+                            <option value="">Select</option>
+                            <option value="OK">OK</option>
+                            <option value="NOT OK">NOT OK</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5.8</td>
+                    <td style="text-align: justify;">Locking the yellow plastic 
+                        cover of trackside 
+                        connection box.</td>   
+                    <td style="text-align: justify;">Yellow plastic cover locked with 
+                        base of the box using a pad lock.</td>
+                    <td><input type="text" id="plastic" name="plastic" required></td>
+                    <td>
+                        <select id="remarks005" name="remarks005" required>\
+                            <option value="">Select</option>
+                            <option value="OK">OK</option>
+                            <option value="NOT OK">NOT OK</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5.9</td>
+                    <td style="text-align: justify;">Earthing of overvoltage 
+                        protection module.</td>
+                    <td style="text-align: justify;">The overvoltage protection module 
+                        inside trackside connection box 
+                        must be connected to Earth. 
+                        
+                    </td>   
+                    <td><input type="text" id="Earthing" name="Earthing" required></td>
+                    <td>
+                        <select id="remarks006" name="remarks006" required>\
+                            <option value="">Select</option>
+                            <option value="OK">OK</option>
+                            <option value="NOT OK">NOT OK</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5.10</td>
+                    <td style="text-align: justify;">Earthing to the rail. 
+                    </td>  
+                    <td style="text-align: justify;">The earth terminal of TCB must be 
+                        connected to Earth rail with 
+                        25mm² copper cable.  
+                             </td>   
+                    <td><input type="text" id="terminal" name="terminal" required></td>
+                    <td>
+                        <select id="remarks007" name="remarks007" required>\
+                            <option value="">Select</option>
+                            <option value="OK">OK</option>
+                            <option value="NOT OK">NOT OK</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5.11</td>
+                    <td style="text-align: justify;">Earth connection in case 
+                        of Non RE section/Sub- station area & RE section 
+                        & Substation area.  
+                    </td>  
+                    <td style="text-align: justify;">The earth should be connected to 
+                        Earth pit whose value should be < 2 
+                        ohm in case of Non RE section/Sub- station area and in case of RE 
+                        section Earth should be connected 
+                        to the earth rail. 
+                         
+                             </td>   
+                    <td><input type="text" id="station" name="station" required></td>
+                    <td>
+                        <select id="remarks008" name="remarks008" required>
+                            <option value="">Select</option>
+                            <option value="OK">OK</option>
+                            <option value="NOT OK">NOT OK</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        <div class="table-container">
+                <h2><span>6.</span><span ><u><b>Outdoor Trackside Connection Box and it’s Electronics – ZP D 43: 
+                </b></u></span></h2>
+                <table>
+                    <tr>
+                        
+                        <td style="width:2%;text-align:center"><b>Sr.<br>No.</b></td>
+                        <td style="width:15%;text-align:center"><b>Item</b></td>
+                        <td style="width:20%;text-align:center"><b>Required</b></td>
+                        <td style="width:25%;text-align:center"><b>Measured<br>/Observed</b> </td>
+                        <td style="width:25%;text-align:center"><b>Remarks<br>(Ok/Not ok)</b></td>
+                    </tr>
+                    <tr>
+                        <td>6.1</td>
+                        <td style="text-align: justify;">Placement of Track side 
+                            connection box 
+                            (Refer part list as Sr. 
+                            no.13) 
+                            </td>
+                        <td style="text-align: justify;">Should be fitted Horizontally / 
+                            Vertically to adaptor plate inside 
+                            trackside connection box/td>   
+                        <td><input type="text" id="Placement" name="Placement" required></td>
+                        <td>
+                            <select id="remarks009" name="remarks009" required>\
+                                <option value="">Select</option>
+                                <option value="OK">OK</option>
+                                <option value="NOT OK">NOT OK</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6.2</td>
+                        <td style="text-align: justify;">Placement of overvoltage
+                            protection module. </td>
+                        <td style="text-align: justify;">Should be fitted Horizontally/ 
+                            Vertically to adaptor plate inside 
+                            trackside connection box with axle 
+                            detection equipment module. </td>   
+                        <td><input type="text" id="overvoltage" name="overvoltage" required></td>
+                        <td>
+                            <select id="remarks010" name="remarks010" required>\
+                                <option value="">Select</option>
+                                <option value="OK">OK</option>
+                                <option value="NOT OK">NOT OK</option>
+                            </select>
+                        </td>
+                    </tr>
+                    
+                </div>
+       
+             </div>
+             </table>
+        <!-- Signature Container -->
+        <div class="signature-container">
+            <!-- Siemens Representative Signature -->
+            <div class="signature left">
+                <label for="signatureImage1" class="upload-button"></label>
+                <input type="file" id="signatureImage1" accept="image/*" required>
+                <p>Signature of Siemens Representative:</p>
+                <p>With Name, Designation & Date</p>
+            </div>
+            
+            <!-- Railway Representative Signature -->
+            <div class="signature right">
+                <label for="signatureImage2" class="upload-button"></label>
+                <input type="file" id="signatureImage2" accept="image/*" required>
+                <p>Signature of Railway Representative:</p>
+                <p>With Name, Designation & Date</p>
+            </div>
+        </div>
+        
+        <div class="page-break"></div>
+    <table id="table1">
+        <tr>
+            <th>Page 6 of 34</th>
+            <th>Document no.:SI-G-7.1-0624</th>
+            <th>Version:2.0</th>
+            <th>Date of issue:19.11.2019</th>
+        </tr>
+        <tr><td colspan="4" style="text-align:center;">Title:Pre-commissioning Check List of Multi Section Digital axle Counter MSDAC Model:ACM 200<br>(Another variant)
+            and Track side Equipment ZP D 43 of M/s Siemens India Ltd.,Mumbai.</td>
+            
+        </tr>
+    </table>
+    <br>
+    
+    <div class="table-container">
+       
+        <table>
+        
+            <tr>
+                <td style="width:2%">6.3</td>
+                <td style="width:15%;text-align:justify">Connection of Rx cores to 
+                    Axle detection equipment 
+                    module to corresponding 
+                    terminals. 
+                    (Refer part list as Sr. 
+                    no.13) 
+                     </td>
+                <td style="width:22%"><b>Blue (1) </b> terminal-1 of Axle 
+                    Detection equipment 
+                    module 
+                     <br>
+                    <b>Green (2)</b>  to terminal-2 of Axle 
+                     Detection equipment 
+                     module 
+                      <br><b>Yellow (3) </b>to terminal-3 of Axle 
+                      Detection equipment 
+                      module <br><b>Red (4)</b> to terminal-4 of Axle 
+                      Detection equipment 
+                      module. 
+                      
+                      
+</td>   
+                <td style="width:25%"><input type="text" id="clr" name="clr" required></td>
+                <td style="width:25%">
+                    <select id="remarks11" name="remarks11" required>\
+                        <option value="">Select</option>
+                        <option value="OK">OK</option>
+                        <option value="NOT OK">NOT OK</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>6.4</td>
+                <td style="text-align: justify;">Connection of Tx cores to 
+                    Axle detection equipment 
+                    module to corresponding 
+                    terminals. 
+                    (Refer part list as per 
+                    point no.13) 
+                    </td>
+                <td><b>Red (5)</b> to terminal-5 of Axle 
+                    Detection equipment 
+                    module. <br>
+                    <b>Yellow (6)</b> to terminal-6 of Axle 
+                    Detection equipment 
+                    module.<br> 
+                   <b> Red (7)</b> to terminal-7 of Axle 
+                    Detection equipment 
+                    module. <br>
+                    <b>Green (8)</b> to terminal-8 of Axle 
+                    Detection equipment 
+                    module. <br>
+                   <b> Blue (9)</b> to terminal-9 of Axle 
+                    Detection equipment 
+                    module.           </td>   
+                <td><input type="text" id="clr2" name="clr2" required></td>
+                <td>
+                    <select id="remarks12" name="remarks12" required>\
+                        <option value="">Select</option>
+                        <option value="OK">OK</option>
+                        <option value="NOT OK">NOT OK</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>6.5</td>
+                <td style="text-align: justify;">Calibration of Axle 
+                    detection equipment
+                </td>
+                <td style="text-align: justify;">Calibration process is required 
+                    after switching on indoor 
+                    equipment (ACM modules). 
+                    As per annexure D.</td>   
+                    <td><input type="text" id="axle" name="axle" required></td>
+                    
+               <td>
+                    <select id="remarks13" name="remarks13" required>\
+                        <option value="">Select</option>
+                        <option value="OK">OK</option>
+                        <option value="NOT OK">NOT OK</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>6.6</td>
+                <td style="text-align: justify;"> Measurement of 
+                    electrical parameters at 
+                    trackside connection box.
+                </td>
+                <td style="text-align: justify;">The readings are to be taken 
+                    initially, when the trackside device 
+                    (Axle sensor) has been fixed to the 
+                    rail web & tightened using a torque 
+                    wrench with a force of 45Nm ± 5.</td>   
+                    <td><input type="text" id="clr45N" name="clr45N" required></td>
+                <td>
+                    <select id="remarks14" name="remarks14" required>\
+                        <option value="">Select</option>
+                        <option value="OK">OK</option>
+                        <option value="NOT OK">NOT OK</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>6.7</td>
+                <td style="text-align: justify;"> Use of star Quad cable for 
+                    Axle Counter 
+                    </td>   
+                <td style="text-align: justify;">Ensure that star quad cable should 
+                    not be laid in a common cable 
+                    route or cable through with cables 
+                    carrying traction return current. </td>
+                    <td><input type="text" id="ens" name="ens" required></td>
+                <td>
+                    <select id="remarks15" name="remarks15" required>\
+                        <option value="">Select</option>
+                        <option value="OK">OK</option>
+                        <option value="NOT OK">NOT OK</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>6.8</td>
+                <td style="text-align: justify;">  Handling of boards  </td>
+                <td style="text-align: justify;">Don’t touch the boards in trackside 
+                    connection box when trackside is 
+                    functioning. </td>   
+                <td><input type="text" id="o450" name="o450" required></td>
+                <td>
+                    <select id="remarks16" name="remarks16" required>
+                        <option value="">Select</option>
+                        <option value="OK">OK</option>
+                        <option value="NOT OK">NOT OK</option>
+                    </select>
+                </td>
+            </tr>
+           
+        </table>
+
+        <div class="container">
+            <div class="signature-container left">
+                <div class="signature">
+                    <label for="signatureImage1" class="upload-button" id="uploadButton1"></label>
+                    <input type="file" id="signatureImage1" accept="image/*" required>
+
+                    <p>Signature of Siemens Representative:</p>
+                    <p>With Name, Designation & Date</p>
+                </div>
+            </div>
+            <div class="signature-container right">
+                <div class="rsign">
+                    <label for="signatureImage2" class="upload-button" id="uploadButton1"></label>
+
+                    
+                    <p>Signature of Railway Representative:</p>
+                    <p>With Name, Designation & Date</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-break"></div>
+        <table id="table1">
+            <tr>
+                <th>Page 7 of 34</th>
+                <th>Document no.:SI-G-7.1-0624</th>
+                <th>Version:2.0</th>
+                <th>Date of issue:19.11.2019</th>
+            </tr>
+            <tr><td colspan="4" style="text-align:center;">Document Title:Pre-commissioning Check List of Multi Section Digital axle Counter MSDAC Model:ACM 200<br>(Another variant)
+                and Track side Equipment ZP D 43 of M/s Siemens India Ltd.,Mumbai.</td>
+                
+            </tr>
+        </table>
+        <br>
+        <div class="table-container">
+            <h2><span>6.6.1</span><span ><u><b>Measurement (parameters) at Track side Connection box: 
+            </b></u></span></h2>
+            <table>
+                <tr>
+                    
+                    <td style="width:25%;text-align:center"><b>Parameters to be Measured</b></td>
+                    <td style="width:15%;text-align:center"><b>Acceptable 
+                        Range 
+                        </b></td>
+                    <td style="width:10%;text-align:center"><b>Value at the time of 
+                        commissioning</b></td>
+                    <td style="width:10%;text-align:center"><b>Value after tightening 
+                        trackside device after 
+                        passage of 25-30 trains</b> </td>
+                </tr>
+                <tr>
+                    <td style="text-align: justify;">Axle Detection Equipment supply 
+                        voltage [U 60 at terminal NS]
+                        </td>
+                    <td style="text-align: justify;">30 to 72VDC</td>   
+                    <td><input type="text" id="tightness70" name="tightness70" required></td>
+                    <td><input type="text" id="tightness71" name="tightness71" required></td>
+                </tr>
+                <tr>
+                    <td style="text-align: justify;">Axle Detection Equipment 
+                        [U 60 at terminal FS]
+                        (i) supply voltage 
+                        (ii) supply voltage 
+                        with local (external )supply
+                        
+                    <td style="text-align: justify;">30 to 72VDC 
+                        26 to 50VAC</td>   
+                    <td><input type="text" id="tightness72" name="tightness72" required></td>
+                    <td><input type="text" id="tightness73" name="tightness73" required></td>
+                </tr>
+                <tr>
+                    <td style="text-align: justify;">Transmitter frequency 
+                        of the DEK 
+                        [double wheel detector] 
+                        [FS] at terminal 6 and 7 or 
+                        at terminal 8 and 9 
+                        
+                    <td style="text-align: justify;">41.5 to 
+                        44.5kHz</td>   
+                    <td><input type="text" id="tightness74" name="tightness74" required></td>
+                    <td><input type="text" id="tightness75" name="tightness75" required></td>
+                </tr>
+                <tr>
+                    <td style="text-align: justify;">Receiver voltage 1 
+                        [uE1]at terminal 3 and 4
+                        
+                    <td style="text-align: justify;">60 to 150mV 
+                    </td>   
+                    <td><input type="text" id="tightness76" name="tightness76" required></td>
+                    <td><input type="text" id="tightness77" name="tightness77" required></td>
+                </tr>
+                <tr>
+                    <td style="text-align: justify;">Receiver voltage 2 
+                        [uE2] at terminal 1 and 2 
+                        
+                    <td style="text-align: justify;">60 to 150mV 
+                    </td>   
+                    <td><input type="text" id="tightness78" name="tightness78" required></td>
+                    <td><input type="text" id="tightness79" name="tightness79" required></td>
+                </tr>
+                <div class="end-of-page-content">
+                <tr>
+                    <td style="text-align: justify;">Maximum Control distance from ACM 
+                        200 module to Outdoor ZP D 43 (Track 
+                        Device)                     
+                    <td colspan="3"style="text-align: justify;">The typical control distance from Evaluator to Track side 
+                        connection box is defined as 4.5km. In case of longer 
+                        distance i.e. more than 4.5km, the broadband transformer 
+                        (Part No.V25319-Z1-A9-*) is to be used for reduction of 
+                        influence. </td>   
+                   
+                </tr>
+            </div>
+            </table>
+        </div>
+        <div class="container">
+            <div class="signature-container left">
+                <div class="signature">
+                    <label for="signatureImage1" class="upload-button" id="uploadButton1"></label>
+                    <input type="file" id="signatureImage1" accept="image/*" required>
+
+                    <p>Signature of Siemens Representative:</p>
+                    <p>With Name, Designation & Date</p>
+                </div>
+            </div>
+            <div class="signature-container right">
+                <div class="rsign">
+                    <label for="signatureImage2" class="upload-button" id="uploadButton1"></label>
+
+                    
+                    <p>Signature of Railway Representative:</p>
+                    <p>With Name, Designation & Date</p>
+                </div>
+            </div>
+        </div>
+        <div class="page-break"></div>
+        <table id="table1">
+            <tr>
+                <th>Page 8 of 34</th>
+                <th>Document no.:SI-G-7.1-0624</th>
+                <th>Version:2.0</th>
+                <th>Date of issue:19.11.2019</th>
+            </tr>
+            <tr><td colspan="4" style="text-align:center;">Title:Pre-commissioning Check List of Multi Section Digital axle Counter MSDAC Model:ACM 200<br>(Another variant)
+                and Track side Equipment ZP D 43 of M/s Siemens India Ltd.,Mumbai.</td>
+                
+            </tr>
+        </table>
+        <br>
+        <div class="table-container">
+       
+        <h2 style="text-align: justify-center;"><span>7.</span><span ><u><b>Indoor Relay Room (Power supply &CT Rack):
+        </b></u></span></h2>
+        <br>
+        <table>
+            <tr >
+                <td style="width:2%;text-align: center"><b>Sr.<br>No.</b></td>
+                <td style="width:15%;text-align: center"><b>Item</b></td>
+                <td style="width:20%;text-align: center"><b>Required</b></td>
+                <td style="width:25%;text-align: center"><b>Measured<br>/Observed</b> </td>
+                <td style="width:25%;text-align: center"><b>Remarks<br>(Ok/Not ok)</b></td>
+            </tr>
+           
+                <tr>
+                    <td>7.1</td>
+                    <td style="text-align: justify;"> Power supply
+                        </td>
+                    <td>a) Power supply should be suitable 
+                        for Axle Counter System. 
+                        <br>
+                        b) There should not be any other 
+    load on the power supply except 
+    the Axle Counter System. <br> 
+    c) Class "B” typesurge protection 
+    must be provided on 230V mains 
+    line. <br>
+                                 </td>   
+                    <td><input type="text" id="abc" name="abc" required></td>
+                    <td>
+                        <select id="remarks17" name="remarks17" required>\
+                            <option value="">Select</option>
+                            <option value="OK">OK</option>
+                            <option value="NOT OK">NOT OK</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>7.2</td>
+                    <td style="text-align: justify;"> Cable for feeding 
+                        (i) 24 or 60VDC to the 
+                        busbar from main 
+                        power 
+                        supply(IPS/Battery 
+                        Charger ) and <br>
+                        (ii)Busbar to Central 
+                        evaluator
+                    </td>
+                    <td style="text-align: justify;">a) Minimum 10 sq.mm multistrand copper cable from main 
+                        power supply to busbar and <br>
+                        b) 2core shielded cable from 
+                        busbar to ACM modules must 
+                        be used.
+                        </td>   
+                        <td><input type="text" id="a10sq" name="a10sq" required></td>
+                        
+                   <td>
+                        <select id="remarks18" name="remarks18" required>\
+                            <option value="">Select</option>
+                            <option value="OK">OK</option>
+                            <option value="NOT OK">NOT OK</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>7.3</td>
+                    <td style="text-align: justify;"> Total load calculation 
+                        [Basic current 
+                        requirement for 1 No. of 
+                        ACM 200 module and 2 
+                        Nos. ofZP D 43 = 1.3Amp
+                    </td>
+                    <td style="text-align: justify;">Load calculation 
+                        Includes ACM modules, Detection 
+                        points & Reset modules/Panel. 
+                        Load Calculation for fuse rating: 
+                        ~ 1.5*(No. of ACM modules*12w + 
+                         No. of Detection point*5w + 
+                         No. of reset 
+                        modules*5w/24 or 60 VDC) = 
+                        Total current. .</td>   
+                        <td><input type="text" id="cal" name="cal" required></td>
+                    <td>
+                        <select id="remarks19" name="remarks19" required>\
+                            <option value="">Select</option>
+                            <option value="OK">OK</option>
+                            <option value="NOT OK">NOT OK</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>7.4</td>
+                    <td style="text-align: justify;"> Battery Charger Input 
+                        supply should be off for 
+                        15 min. 
+                        
+                        </td>   
+                    <td style="text-align: justify;">Should notbe less than 54VDC. </td>
+                        <td><input type="text" id="a54v" name="a54v" required></td>
+                    <td>
+                        <select id="remarks20" name="remarks20" required>\
+                            <option value="">Select</option>
+                            <option value="OK">OK</option>
+                            <option value="NOT OK">NOT OK</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>7.5</td>
+                    <td style="text-align: justify;">  Input voltage(local from 
+                        battery charger) at the 
+                        Trackside connection box 
+                        should be off for 15 min. </td>
+                    <td style="text-align: justify;">Should not be less than 30VDC. </td>   
+                    <td><input type="text" id="r30V" name="r30V" required></td>
+                    <td>
+                        <select id="remarks21" name="remarks21" required>\
+                            <option value="">Select</option>
+                            <option value="OK">OK</option>
+                            <option value="NOT OK">NOT OK</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>7.6</td>
+                    <td style="text-align: justify;"> Ripple content of power 
+                        supply  </td>
+                    <td style="text-align: justify;">Should not exceed 
+                        50 mVAC (peak - peak) or 
+                        10 mV rms.  </td>   
+                    <td><input type="text" id="r10mV" name="r10mV" required></td>
+                    <td>
+                        <select id="remarks22" name="remarks22" required>\
+                            <option value="">Select</option>
+                            <option value="OK">OK</option>
+                            <option value="NOT OK">NOT OK</option>
+                        </select>
+                    </td>
+                </tr>
+               
+            </table>
+    
+            <div class="container">
+                <div class="signature-container left">
+                    <div class="signature">
+                        <label for="signatureImage1" class="upload-button" id="uploadButton1"></label>
+                        <input type="file" id="signatureImage1" accept="image/*" required>
+    
+                        <p>Signature of Siemens Representative:</p>
+                        <p>With Name, Designation & Date</p>
+                    </div>
+                </div>
+                <div class="signature-container right">
+                    <div class="rsign">
+                        <label for="signatureImage2" class="upload-button" id="uploadButton1"></label>
+    
+                        
+                        <p>Signature of Railway Representative:</p>
+                        <p>With Name, Designation & Date</p>
+                    </div>
+                </div>
+            </div>
+            <div class="page-break"></div>
+            <table id="table1">
+                <tr>
+                    <th>Page 9 of 34</th>
+                    <th>Document no.:SI-G-7.1-0624</th>
+                    <th>Version:2.0</th>
+                    <th>Date of issue:19.11.2019</th>
+                </tr>
+                <tr><td colspan="4" style="text-align:center;">Document Title:Pre-commissioning Check List of Multi Section Digital axle Counter MSDAC Model:ACM 200<br>(Another variant)
+                    and Track side Equipment ZP D 43 of M/s Siemens India Ltd.,Mumbai.</td>
+                    
+                </tr>
+            </table>
+            <div class="table-container">
+               <table>
+                <tr>
+                    <td style="width:2%;text-align: justify;">7.7</td>   
+                    <td style="width:15%;text-align: justify;">Spike in the power 
+                        supply 
+                        </td>
+                    <td style="width:20%;text-align: justify;">There should be no spikes in the 
+                        power supply exceeding of 20% of 
+                        nominal voltage.</td>
+                        <td style="width:25%"><input type="text" id="clearance90" name="clearance90" required></td>
+                        <td style="width:25%">
+                            <select id="remarks90" name="remarks90" required>\
+                                <option value="">Select</option>
+                                <option value="OK">OK</option>
+                                <option value="NOT OK">NOT OK</option>
+                            </select>
+                        </td>
+                </tr>
+                <tr>
+                    <td style="width:2%;text-align: justify;">7.8</td>   
+                    <td style="width:15%;text-align: justify;">Terminal blocks 
+                        between ACM and CT 
+                        rack  
+                        </td>
+                    <td style="width:20%;text-align: justify;">Wago/Phoenix makes cage clamp 
+                        type terminals to be used.</td>
+                        <td style="width:25%"><input type="text" id="clearance91" name="clearance91" required></td>
+                        <td style="width:25%">
+                            <select id="remarks91" name="remarks91" required>\
+                                <option value="">Select</option>
+                                <option value="OK">OK</option>
+                                <option value="NOT OK">NOT OK</option>
+                            </select>
+                        </td>
+                </tr>
+                <tr>
+                    <td style="width:2%;text-align: justify;">7.9</td>   
+                    <td style="width:15%;text-align: justify;">Cable from the 
+                        evaluator to CT rack.
+                         
+                        </td>
+                    <td style="width:20%;text-align: justify;"> 24 cores shielded cable, single 
+                        strand, 0.5 mm dia. shielded 
+                        telecom cable to be used 
+                        Shield of the cable should be 
+                        earthed. 
+                        </td>
+                        <td style="width:25%"><input type="text" id="clearance92" name="clearance92" required></td>
+                        <td style="width:25%">
+                            <select id="remarks92" name="remarks92" required>\
+                                <option value="">Select</option>
+                                <option value="OK">OK</option>
+                                <option value="NOT OK">NOT OK</option>
+                            </select>
+                        </td>
+                </tr>
+                <tr>
+                    <td style="width:2%;text-align: justify;">7.10</td>   
+                    <td style="width:15%;text-align: justify;">Placement of 
+                        overvoltage protection 
+                        module. (D Class)
+                        </td>
+                    <td style="width:20%;text-align: justify;">Should be fitted between ACM 200 
+                        Module and Detection Point 
+                        Conductors. </td>
+                        <td style="width:25%"><input type="text" id="clearance93" name="clearance93" required></td>
+                        <td style="width:25%">
+                            <select id="remarks93" name="remarks93" required>\
+                                <option value="">Select</option>
+                                <option value="OK">OK</option>
+                                <option value="NOT OK">NOT OK</option>
+                            </select>
+                        </td>
+                </tr>
+                <tr>
+                    <td style="width:2%;text-align: justify;">7.11</td>   
+                    <td style="width:15%;text-align: justify;">Use of proper rated fuse 
+                        inserts. (Fuse rating for 
+                        DP = 200mA, for Vital 
+                        relay/ track = 1.6A)
+                        </td>
+                    <td style="width:20%;text-align: justify;">Don’t use fuse of higher rating than 
+                        specified</td>
+                        <td style="width:25%"><input type="text" id="clearance94" name="clearance94" required></td>
+                        <td style="width:25%">
+                            <select id="remarks94" name="remarks94" required>\
+                                <option value="">Select</option>
+                                <option value="OK">OK</option>
+                                <option value="NOT OK">NOT OK</option>
+                            </select>
+                        </td>
+                </tr>
+                <tr>
+                    <td style="width:2%;text-align: justify;">7.12</td>   
+                    <td colspan="4"style="width:15%;text-align: justify;"><b>Proving of Back Contact of AXTPR Relay (K50 Type 5F/3B) in Interlocking circuits.</b>
+        
+                        </td>
+                <tr>
+                    <td style="width:2%;text-align: justify;">Scenario 
+                        1 
+                        </td>   
+                    <td style="width:15%;text-align: justify;">Interlocking circuits with 
+                        Metal to Metal and Metal 
+                        to Carbon relays)
+                        </td>
+                    <td style="width:20%;text-align: justify;">Back contact of AXTPR must be proved 
+                        in circuits which positively check that 
+                        the track was occupied. (Like sub route 
+                        release circuit )</td>
+                        <td style="width:25%"><input type="text" id="clearance95" name="clearance95" required></td>
+                        <td style="width:25%">
+                            <select id="remarks95" name="remarks95" required>\
+                                <option value="">Select</option>
+                                <option value="OK">OK</option>
+                                <option value="NOT OK">NOT OK</option>
+                            </select>
+                        </td>
+                </tr>
+                <tr>
+                    <td style="width:2%;text-align: justify;">Scenario 
+                        2</td>   
+                    <td style="width:15%;text-align: justify;">Electronic Interlocking
+        
+                        </td>
+                    <td style="width:20%;text-align: justify;">Back contact of AXTPR must be read 
+                        into EI using an input channel. The Bit 
+                        monitoring the valid occupied status 
+                        must be proved in logic which checks 
+                        positively that the track was occupied. 
+                        (Like sub route release circuit)</td>
+                        <td style="width:25%"><input type="text" id="clearance96" name="clearance96" required></td>
+                        <td style="width:25%">
+                            <select id="remarks96" name="remarks96" required>\
+                                <option value="">Select</option>
+                                <option value="OK">OK</option>
+                                <option value="NOT OK">NOT OK</option>
+                            </select>
+                        </td>
+                </tr>
+                <tr>
+                    <td colspan="5"style="width:2%;text-align: justify;">Note: The proving of back contact of AXTPR in the interlocking circuits to be ensured by zonal railways while 
+                        designing interlocking circuits 
+                        </td> 
+                </table>
+                <div class="container">
+                    <div class="signature-container left">
+                        <div class="signature">
+                            <label for="signatureImage1" class="upload-button" id="uploadButton1"></label>
+                            <input type="file" id="signatureImage1" accept="image/*" required>
+        
+                            <p>Signature of Siemens Representative:</p>
+                            <p>With Name, Designation & Date</p>
+                        </div>
+                    </div>
+                    <div class="signature-container right">
+                        <div class="rsign">
+                            <label for="signatureImage2" class="upload-button" id="uploadButton1"></label>
+        
+                            
+                            <p>Signature of Railway Representative:</p>
+                            <p>With Name, Designation & Date</p>
+                        </div>
+                    </div>
+                </div>
+            
+            <div class="page-break"></div>
+            <table id="table1">
+                <tr>
+                    <th>Page 12 of 34</th>
+                    <th>Document no.:SI-G-7.1-0624</th>
+                    <th>Version:2.0</th>
+                    <th>Date of issue:19.11.2019</th>
+                </tr>
+                <tr><td colspan="4" style="text-align:center;">Title:Pre-commissioning Check List of Multi Section Digital axle Counter MSDAC Model:ACM 200<br>(Another variant)
+                    and Track side Equipment ZP D 43 of M/s Siemens India Ltd.,Mumbai.</td>
+                    
+                </tr>
+            </table>
+            <table>
+            <br>
+            <div class="table-container">
+            <tr>
+                <td colspan="5">8.4 Indications on the ACM modules after pressing ‘RST’ button for 2 sec.
+                </td>
+                
+            </tr>
+            <tr >
+                <td style="width:2%;text-align: center">8.4.1</b></td>
+                <td style="width:15%;text-align: center"> “OK” LED (Green) </td>
+                <td style="width:20%;text-align: center">Steady Green light : ACM is OK</td>
+                <td style="width:15%;text-align: center"><input type="text" id="ok" name="ok" required> </td>
+                <td style="width:15%;text-align: center"><input type="text" id="remarks23" name="remarks23" required></td>
+            </tr>
+            <tr >
+                <td style="width:2%;text-align: center">8.4.2</b></td>
+                <td style="width:15%;text-align: center"> “TVDS1” LED </td>
+                <td style="width:20%;text-align: center">Steady Red light : Due to Section 
+                    ‘OCCUPIED’ </td>
+                <td style="width:15%;text-align: center" > <input type="text" id="s1" name="s1" required></td>
+                <td style="width:15%;text-align: center"><input type="text" id="remarks24" name="remarks24" required></td>
+            </tr>
+            <tr >
+                <td style="width:2%;text-align: center">8.4.3</b></td>
+                <td style="width:15%;text-align: center"> “TVDS2” LED </td>
+                <td style="width:20%;text-align: center">Steady Red light : Due to Section 
+                    ‘OCCUPIED’  </td>
+                <td style="width:15%;text-align: center"> <input type="text" id="s2" name="s2" required></td>
+                <td style="width:15%;text-align: center"><input type="text" id="remarks25" name="remarks25" required></td>
+            </tr>
+            <tr >
+                <td style="width:2%;text-align: center">8.4.4</b></td>
+                <td style="width:15%;text-align: center">  “DS1.1” LED  </td>
+                <td style="width:20%;text-align: center">Steady Green light : Pulse free 
+                </td>
+                    
+                  
+                <td style="width:15%;text-align: center"><input type="text" id="s3" name="s3" required> </td>
+                <td style="width:15%;text-align: center"><input type="text" id="remarks26" name="remarks26" required></td>
+            </tr>
+            <tr >
+                <td style="width:2%;text-align: center">8.4.5</b></td>
+                <td style="width:15%;text-align: center">  “DS1.2” LED  </td>
+                <td style="width:20%;text-align: center">Steady Green light : Pulse free 
+                </td>
+                    
+                    
+                <td style="width:15%;text-align: center"><input type="text" id="s4" name="s4" required> </td>
+                <td style="width:15%;text-align: center"> <input type="text" id="remarks27" name="remarks27" required></td>
+            </tr>
+            <tr >
+                <td style="width:2%;text-align: center">8.4.6</b></td>
+                <td style="width:15%;text-align: center">  “DS2.1” LED  </td>
+                <td style="width:20%;text-align: center">Steady Green light : Pulse free 
+                </td>
+                    
+                <td style="width:15%;text-align: center"> <input type="text" id="s5" name="s5" required></td>
+                <td style="width:15%;text-align: center"><input type="text" id="remarks28" name="remarks28" required></td>
+            </tr>
+            <tr >
+                <td style="width:2%;text-align: center">8.4.7</b></td>
+                <td style="width:15%;text-align: center">  “DS1.1” LED  </td>
+                <td style="width:20%;text-align: center">Steady Green light : Pulse free 
+                </td>
+                    
+                   
+                <td style="width:15%;text-align: center"> <input type="text" id="s6" name="s6" required></td>
+                <td style="width:15%;text-align: center"><input type="text" id="remarks29" name="remarks29" required></td>
+            </tr>
+            <tr >
+                <td style="width:2%;text-align: center">8.4.8</b></td>
+                <td style="width:15%;text-align: center">  “RR1” LED</td>
+                <td style="width:20%;text-align: center">Off condition
+                </td>
+                    
+                    
+                <td style="width:15%;text-align: center"> <input type="text" id="s7" name="s7" required></td>
+                <td style="width:15%;text-align: center"><input type="text" id="remarks30" name="remarks30" required></td>
+            </tr>
+            <tr >
+                <td style="width:2%;text-align: center">8.4.9</b></td>
+                <td style="width:15%;text-align: center">  “RR2” LED</td>
+                <td style="width:20%;text-align: center">Off condition
+                </td>
+                    
+                    
+                <td style="width:15%;text-align: center"> <input type="text" id="s8" name="s8" required></td>
+                <td style="width:15%;text-align: center"><input type="text" id="remarks31" name="remarks31" required></td>
+            </tr>
+            <tr >
+                <td style="width:2%;text-align: center">8.4.10</b></td>
+                <td style="width:15%;text-align: center">  "COM" LED</td>
+                <td style="width:20%;text-align: center">Steady Green light: All fail safe 
+                    connections OK. 
+                    
+                </td>
+                    
+                    
+                <td style="width:15%;text-align: center"> <input type="text" id="s9" name="s9" required></td>
+                <td style="width:15%;text-align: center"><input type="text" id="remarks32" name="remarks32" required></td>
+            </tr>
+            <tr >
+                <td style="width:2%;text-align: center">8.4.10</b></td>
+                <td style="width:15%;text-align: center">  "COM" LED</td>
+                <td style="width:20%;text-align: center">Steady Green light: All fail safe 
+                    connections OK. 
+                    
+                </td>
+                    
+                    
+                <td style="width:15%;text-align: center"> <input type="text" id="s10" name="s10" required></td>
+                <td style="width:15%;text-align: center"><input type="text" id="remarks33" name="remarks33" required></td>
+            </tr>
+            <tr>
+                <td colspan="5">8.5 Indications on the ACM modules after calibration process by pressing ‘CAL’ on ACM module for 3 Sec. 
+                </td>
+                
+            </tr>
+            <tr >
+                <td style="width:2%;text-align: center">8.5.1</b></td>
+                <td style="width:15%;text-align: center">   “CAL” LED </td>
+                <td style="width:20%;text-align: center">Steady Green light : Calibration is 
+                    OK. 
+                    
+                </td>
+                    
+                    
+                <td style="width:15%;text-align: center"> <input type="text" id="s11" name="s11" required></td>
+                <td style="width:15%;text-align: center"><input type="text" id="remarks34" name="remarks34" required></td>
+            </tr>
+            <tr >
+                <td style="width:2%;text-align: center">8.5.2</b></td>
+                <td style="width:15%;text-align: center">   “DIR 1” LED </td>
+                <td style="width:20%;text-align: center">Off condition after calibration  </td>
+                    
+                    
+                <td style="width:15%;text-align: center"> <input type="text" id="s12" name="s12" required></td>
+                <td style="width:15%;text-align: center"><input type="text" id="remarks35" name="remarks35" required></td>
+            </tr>
+            <tr >
+                <td style="width:2%;text-align: center">8.5.3</b></td>
+                <td style="width:15%;text-align: center">   “DIR 2” LED </td>
+                <td style="width:20%;text-align: center">Off condition after calibration 
+        
+                    
+              
+                    
+                    
+                <td style="width:15%;text-align: center"><input type="text" id="s13" name="s13" required> </td>
+                <td style="width:15%;text-align: center"><input type="text" id="remarks36" name="remarks36" required></td>
+            </tr>
+        
+           </div>
+        
+        </table>
+        <div class="container">
+            <div class="signature-container left">
+                <div class="signature">
+                    <label for="signatureImage1" class="upload-button" id="uploadButton1"></label>
+                    <input type="file" id="signatureImage1" accept="image/*" required>
+
+                    <p>Signature of Siemens Representative:</p>
+                    <p>With Name, Designation & Date</p>
+                </div>
+            </div>
+            <div class="signature-container right">
+                <div class="rsign">
+                    <label for="signatureImage2" class="upload-button" id="uploadButton1"></label>
+
+                    
+                    <p>Signature of Railway Representative:</p>
+                    <p>With Name, Designation & Date</p>
+                </div>
+            </div>
+        </div>
+
+                   
+                            <button type="button" id="generatePDFButton">Generate PDF</button>
+                            <script>
+                                // Function to validate input value as number
+                                function validateNumberInput(inputElement) {
+                                    const inputValue = inputElement.value;
+                                    const isValid = /^\d+$/.test(inputValue); // Regular expression to match only digits
+                            
+                                    if (!isValid) {
+                                        alert('Please enter a valid number.');
+                                        inputElement.value = ''; // Clear the input value
+                                        inputElement.focus(); // Set focus back to the input field
+                                    }
+                                }
+                            
+                                // Function to validate image size
+                                function validateImageSize(inputElement) {
+                                    const fileSize = inputElement.files[0].size; // Get size of uploaded file
+                                    const maxSizeInBytes = 1024 * 1024; // 1 MB (you can adjust as needed)
+                                    
+                                    if (fileSize > maxSizeInBytes) {
+                                        alert('Image size exceeds the maximum allowed size (1MB).');
+                                        inputElement.value = ''; // Clear the input value
+                                        return false;
+                                    }
+                                    return true;
+                                }
+                            
+                                function displayImage(inputElement, uploadButtonId) {
+            const file = inputElement.files[0];
+            const reader = new FileReader();
+        
+            reader.onload = function(e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.style.maxWidth = '100px'; // Adjust size as needed
+                img.style.display = 'block'; // Make the image block-level to fill the button's space
+                img.style.margin = 'auto'; // Center the image horizontally within the button
+                const uploadButton = document.getElementById(uploadButtonId);
+                uploadButton.innerHTML = ''; // Clear the button's content
+                uploadButton.appendChild(img); // Append the image to the button
+                
+                // Display the uploaded image on the screen
+                const imageContainer = document.getElementById('imageContainer');
+                imageContainer.innerHTML = ''; // Clear previous content
+                imageContainer.appendChild(img.cloneNode(true)); // Append a clone of the image
+            };
+        
+            reader.readAsDataURL(file);
+        }
+        
+        document.getElementById('signatureImage1').addEventListener('change', function() {
+            console.log("Image changed for signatureImage1");
+            if (validateImageSize(this)) {
+                displayImage(this, 'uploadButton1');
+            }
+        });
+        
+                    
+                  
+                            
+                                // Function to validate all fields before submission
+                                function validateForm() {
+                                    const stationName = document.getElementById("stationName").value;
+                                    const division = document.getElementById("division").value;
+                                    const contactDetails = document.getElementById("contactDetails").value;
+                                    const moduleDetails = document.getElementById("moduleDetails").value;
+                                    const ACM = document.getElementById("ACM").value;
+                                    const D43 = document.getElementById("D43").value;
+                                    const Det = document.getElementById("Det").value;
+                                    const contractNo = document.getElementById("contractNo").value;
+                                    const inspectionDate = document.getElementById("inspectionDate").value;
+                                    const firm = document.getElementById("firm").value;
+                                    const check = document.getElementById("check").value;
+                                    const impart = document.getElementById("impart").value;
+                                    const Embrossing = document.getElementById("Embrossing").value;
+                                    const remarks01 = document.getElementById("remarks01").value;
+                                    const Clearance = document.getElementById("Clearance").value;
+                                    const remarks02 = document.getElementById("remarks02").value;
+                                    const Height = document.getElementById("Height").value;
+                                    const remarks03 = document.getElementById("remarks03").value;
+        const Hole = document.getElementById("Hole").value;
+        const remarks04 = document.getElementById("remarks04").value;
+        const Diameter = document.getElementById("Diameter").value;
+        const remarks05 = document.getElementById("remarks05").value;
+        const Rail = document.getElementById("Rail").value;
+        const remarks06 = document.getElementById("remarks06").value;
+        const TRANSMITTER = document.getElementById("TRANSMITTER").value;
+        const remarks07 = document.getElementById("remarks07").value;
+                                    const clamps = document.getElementById("clamps").value;
+                                    const remarks1 = document.getElementById("remarks1").value;
+                                    const bolt = document.getElementById("bolt").value;
+                                    const remarks2 = document.getElementById("remarks2").value;
+                                    const tight = document.getElementById("tight").value;
+                                    const remarks3 = document.getElementById("remarks3").value;
+                                    const rx = document.getElementById("rx").value;
+                                    const remarks4 = document.getElementById("remarks4").value;
+                                    const dwc = document.getElementById("dwc").value;
+                                    const remarks5 = document.getElementById("remarks5").value;
+                                    const a450 = document.getElementById("a450").value;
+                                    const remarks6 = document.getElementById("remarks6").value;
+                                    const Sleepers = document.getElementById("Sleepers").value;
+                                    const remarks7 = document.getElementById("remarks7").value;
+                                    const sod = document.getElementById("sod").value;
+                                    const remarks8 = document.getElementById("remarks8").value;
+                                    const yell = document.getElementById("yell").value;
+                                    const remarks9 = document.getElementById("remarks9").value;
+                                    const grom = document.getElementById("grom").value;
+                                    const remarks10 = document.getElementById("remarks10").value;
+                                    const Neoprene = document.getElementById("Neoprene").value;
+const remarks001 = document.getElementById("remarks001").value;
+const tightness = document.getElementById("tightness").value;
+const remarks002 = document.getElementById("remarks002").value;
+const gasket = document.getElementById("gasket").value;
+const remarks003 = document.getElementById("remarks003").value;
+const trackside = document.getElementById("trackside").value;
+const remarks004 = document.getElementById("remarks004").value;
+const plastic = document.getElementById("plastic").value;
+const remarks005 = document.getElementById("remarks005").value;
+const Earthing = document.getElementById("Earthing").value;
+const remarks006 = document.getElementById("remarks006").value;
+const terminal = document.getElementById("terminal").value;
+const remarks007 = document.getElementById("remarks007").value;
+const station = document.getElementById("station").value;
+const remarks008 = document.getElementById("remarks008").value;
+const Placement = document.getElementById("Placement").value;
+const remarks009 = document.getElementById("remarks009").value;
+const overvoltage = document.getElementById("overvoltage").value;
+const remarks010 = document.getElementById("remarks010").value;
+
+const remarks11 = document.getElementById("remarks11").value;
+const clr = document.getElementById("clr").value;
+const remarks12 = document.getElementById("remarks12").value;
+const clr2 = document.getElementById("clr2").value;
+const remarks13 = document.getElementById("remarks13").value;
+const axle = document.getElementById("axle").value;
+const remarks14 = document.getElementById("remarks14").value;
+const clr45N = document.getElementById("clr45N").value;
+const remarks15 = document.getElementById("remarks15").value;
+const ens = document.getElementById("ens").value;
+const remarks16 = document.getElementById("remarks16").value;
+const o450 = document.getElementById("o450").value;
+
+const tightness70 = document.getElementById("tightness70").value;
+const tightness71 = document.getElementById("tightness71").value;
+const tightness72 = document.getElementById("tightness72").value;
+const tightness73 = document.getElementById("tightness73").value;
+const tightness74 = document.getElementById("tightness74").value;
+const tightness75 = document.getElementById("tightness75").value;
+const tightness76 = document.getElementById("tightness76").value;
+const tightness77 = document.getElementById("tightness77").value;
+const tightness78 = document.getElementById("tightness78").value;
+const tightness79 = document.getElementById("tightness79").value;
+
+const abc = document.getElementById("abc").value;
+const remarks17 = document.getElementById("remarks17").value;
+const a10sq = document.getElementById("a10sq").value;
+const remarks18 = document.getElementById("remarks18").value;
+const cal = document.getElementById("cal").value;
+const remarks19 = document.getElementById("remarks19").value;
+const a54v = document.getElementById("a54v").value;
+const remarks20 = document.getElementById("remarks20").value;
+const r30V = document.getElementById("r30V").value;
+const remarks21 = document.getElementById("remarks21").value;
+const r10mV = document.getElementById("r10mV").value;
+const remarks22 = document.getElementById("remarks22").value;
+
+const clearance90 = document.getElementById("clearance90").value;
+const remarks90 = document.getElementById("remarks90").value;
+
+const clearance91 = document.getElementById("clearance91").value;
+const remarks91 = document.getElementById("remarks91").value;
+
+const clearance92 = document.getElementById("clearance92").value;
+const remarks92 = document.getElementById("remarks92").value;
+
+const clearance93 = document.getElementById("clearance93").value;
+const remarks93 = document.getElementById("remarks93").value;
+
+const clearance94 = document.getElementById("clearance94").value;
+const remarks94 = document.getElementById("remarks94").value;
+
+const clearance95 = document.getElementById("clearance95").value;
+const remarks95 = document.getElementById("remarks95").value;
+
+const clearance96 = document.getElementById("clearance96").value;
+const remarks96 = document.getElementById("remarks96").value;
+
+const ok = document.getElementById("ok").value;
+const remarks23 = document.getElementById("remarks23").value;
+const s1 = document.getElementById("s1").value;
+const remarks24 = document.getElementById("remarks24").value;
+const s2 = document.getElementById("s2").value;
+const remarks25 = document.getElementById("remarks25").value;
+const s3 = document.getElementById("s3").value;
+const remarks26 = document.getElementById("remarks26").value;
+const s4 = document.getElementById("s4").value;
+const remarks27 = document.getElementById("remarks27").value;
+const s5 = document.getElementById("s5").value;
+const remarks28 = document.getElementById("remarks28").value;
+const s6 = document.getElementById("s6").value;
+const remarks29 = document.getElementById("remarks29").value;
+const s7 = document.getElementById("s7").value;
+const remarks30 = document.getElementById("remarks30").value;
+const s8 = document.getElementById("s8").value;
+const remarks31 = document.getElementById("remarks31").value;
+const s9 = document.getElementById("s9").value;
+const remarks32 = document.getElementById("remarks32").value;
+const s10 = document.getElementById("s10").value;
+const remarks33 = document.getElementById("remarks33").value;
+const s11 = document.getElementById("s11").value;
+const remarks34 = document.getElementById("remarks34").value;
+const s12 = document.getElementById("s12").value;
+const remarks35 = document.getElementById("remarks35").value;
+const s13 = document.getElementById("s13").value;
+const remarks36 = document.getElementById("remarks36").value;
+
+
+                                    
+        
+                            
+                                    // Perform form validation
+                                    if (stationName.trim() === '' || division.trim() === '' || contactDetails.trim() === '' || moduleDetails.trim() === '' || ACM.trim() === '' || D43.trim() === '' || Det.trim() === '' || contractNo.trim() === '' || inspectionDate.trim() === '' || firm.trim() === '' || check.trim() === '' || impart.trim() === '' ||  Embrossing.trim() === ' ' || remarks01.trim() === ' ' || Clearance.trim() === ' ' || remarks02.trim() === ' ' || Height.trim() === ' ' 
+        || remarks03.trim() === ' ' || Hole.trim() === ' ' || remarks04.trim() === ' ' || Diameter.trim() === ' ' || remarks05.trim() === ' '
+        || Rail.trim() === ' ' || remarks06 .trim() === ' ' || TRANSMITTER.trim() === ' ' || remarks07.trim() === ' ' || clamps.trim() === ''|| remarks1.trim() === ''
+                                || bolt.trim() === '' || remarks2.trim() === '' ||tight.trim() === '' || remarks3.trim() === '' || rx.trim() === '' || remarks4.trim() === ''|| dwc.trim() === ''|| remarks5.trim() === '' || a450.trim() === ''
+                                || remarks6.trim() === ''|| Sleepers.trim() === ''|| remarks7.trim() === ''|| sod.trim() === ''|| remarks8.trim() === ''|| yell.trim() === ''|| remarks9.trim() === ''|| grom.trim() === ''|| remarks10.trim() === ' '
+                                || remarks11.trim() === '' || clr.trim() === '' || remarks12.trim() === '' || clr2.trim() === '' || remarks13.trim() === '' || axle.trim() === '' || remarks14.trim() === '' || clr45N.trim() === '' || remarks15.trim() === '' || ens.trim() === '' || remarks16.trim() === '' || o450.trim() === ''
+                                ||abc.trim() === '' || remarks17.trim() === '' || a10sq.trim() === '' || remarks18.trim() === '' || cal.trim() === '' || remarks19.trim() === '' || a54v.trim() === '' || remarks20.trim() === '' || r30V.trim() === '' || remarks21.trim() === '' || r10mV.trim() === '' || remarks22.trim() === ''
+                                || ok.trim() === '' || remarks23.trim() === '' || s1.trim() === '' || remarks24.trim() === '' || s2.trim() === '' || remarks25.trim() === '' || s3.trim() === '' || remarks26.trim() === '' || s4.trim() === '' || remarks27.trim() === '' || s5.trim() === '' || remarks28.trim() === '' || s6.trim() === '' || 
+                                remarks29.trim() === '' || s7.trim() === '' || remarks30.trim() === '' || s8.trim() === '' || remarks31.trim() === '' || s9.trim() === '' || remarks32.trim() === '' || s10.trim() === '' || remarks33.trim() === '' || s11.trim() === '' || remarks34.trim() === '' || s12.trim() === '' || remarks35.trim() === '' || s13.trim() === ''| remarks36.trim() === ''
+                                ||Neoprene.trim() === '' || remarks001.trim() === '' || tightness.trim() === '' || remarks002.trim() === '' || gasket.trim() === '' || remarks003.trim() === '' || trackside.trim() === '' || remarks004.trim() === '' || plastic.trim() === '' || remarks005.trim() === '' || Earthing.trim() === ''
+                                 || remarks006.trim() === '' || terminal.trim() === '' || remarks007.trim() === '' || station.trim() === '' || remarks008.trim() === '' || Placement.trim() === '' || remarks009.trim() === '' || overvoltage.trim() === '' || remarks010.trim() === ''|| tightness70.trim() === '' || tightness71.trim() === '' || tightness72.trim() === '' || tightness73.trim() === '' || tightness74.trim() === '' || tightness75.trim() === '' || tightness76.trim() === ''
+                                  || tightness77.trim() === '' || tightness78.trim() === '' || tightness79.trim() === ''
+|| clearance90.trim() === '' || remarks90.trim() === '' || clearance91.trim() === '' || remarks91.trim() === '' || clearance92.trim() === '' || remarks92.trim() === '' || clearance93.trim() === '' || remarks93.trim() === '' || clearance94.trim() === '' || remarks94.trim() === '' || clearance95.trim() === '' || remarks95.trim() === '' || clearance96.trim() === '' || remarks96.trim() === ''
+
+
+
+
+
+
+   
+
+
+   
+
+                  ) 
+        {
+                                        alert('Please fill in all fields.');
+                                        return false;
+                                    }
+                            
+                                    // Validate numerical inputs
+                                    validateNumberInput(document.getElementById('ACM'));
+                                    validateNumberInput(document.getElementById('D43'));
+                                    validateNumberInput(document.getElementById('Det'));
+                            
+                                    return true; // Proceed with form submission
+                                }
+                            
+                                // Add event listener to the Generate PDF button
+                                document.getElementById('generatePDFButton').addEventListener('click', async () => {
+                                    if (validateForm()) {
+                                        // Send a POST request to the server to generate the PDF
+                                        const response = await fetch('http://localhost:3000/generate-pdf', {
+                                            method: 'POST',
+                                            headers: {
+                                                'Content-Type': 'application/json'
+                                            },
+                                            body: JSON.stringify({
+                                                stationName: document.getElementById("stationName").value,
+                                                division: document.getElementById("division").value,
+                                                contactDetails: document.getElementById("contactDetails").value,
+                                                moduleDetails: document.getElementById("moduleDetails").value,
+                                                ACM: document.getElementById("ACM").value,
+                                                D43: document.getElementById("D43").value,
+                                                Det: document.getElementById("Det").value,
+                                                contractNo: document.getElementById("contractNo").value,
+                                                inspectionDate: document.getElementById("inspectionDate").value,
+                                                firm: document.getElementById("firm").value,
+                                                check: document.getElementById("check").value,
+                                                impart: document.getElementById("impart").value,
+                                                Embrossing: document.getElementById("Embrossing").value,
+                                                remarks01: document.getElementById("remarks01").value,
+        Clearance: document.getElementById("Clearance").value,
+        remarks02: document.getElementById("remarks02").value,
+        Height: document.getElementById("Height").value,
+        remarks03: document.getElementById("remarks03").value,
+        Hole: document.getElementById("Hole").value,
+        remarks04: document.getElementById("remarks04").value,
+        Diameter: document.getElementById("Diameter").value,
+        remarks05: document.getElementById("remarks05").value,
+        Rail: document.getElementById("Rail").value,
+        remarks06: document.getElementById("remarks06").value,
+        TRANSMITTER: document.getElementById("TRANSMITTER").value,
+        remarks07: document.getElementById("remarks07").value,
+                                                clamps: document.getElementById("clamps").value,
+                                                remarks1: document.getElementById("remarks1").value,
+                                                bolt: document.getElementById("bolt").value,
+                                                remarks2: document.getElementById("remarks2").value,
+                                                tight: document.getElementById("tight").value,
+                                                remarks3: document.getElementById("remarks3").value,
+                                                rx: document.getElementById("rx").value,
+                                                remarks4: document.getElementById("remarks4").value,
+                                                dwc: document.getElementById("dwc").value,
+                                                remarks5: document.getElementById("remarks5").value,
+                                                a450: document.getElementById("a450").value,
+                                                remarks6: document.getElementById("remarks6").value,
+                                                Sleepers: document.getElementById("Sleepers").value,
+                                                remarks7: document.getElementById("remarks7").value,
+                                                sod: document.getElementById("sod").value,
+                                                remarks8: document.getElementById("remarks8").value,
+                                                yell: document.getElementById("yell").value,
+                                                remarks9: document.getElementById("remarks9").value,
+                                                grom: document.getElementById("grom").value,
+                                                remarks10: document.getElementById("remarks10").value,
+                                                Neoprene: document.getElementById("Neoprene").value,
+remarks001: document.getElementById("remarks001").value,
+tightness: document.getElementById("tightness").value,
+remarks002: document.getElementById("remarks002").value,
+gasket: document.getElementById("gasket").value,
+remarks003: document.getElementById("remarks003").value,
+trackside: document.getElementById("trackside").value,
+remarks004: document.getElementById("remarks004").value,
+plastic: document.getElementById("plastic").value,
+remarks005: document.getElementById("remarks005").value,
+Earthing: document.getElementById("Earthing").value,
+remarks006: document.getElementById("remarks006").value,
+terminal: document.getElementById("terminal").value,
+remarks007: document.getElementById("remarks007").value,
+station: document.getElementById("station").value,
+remarks008: document.getElementById("remarks008").value,
+Placement: document.getElementById("Placement").value,
+remarks009: document.getElementById("remarks009").value,
+overvoltage: document.getElementById("overvoltage").value,
+remarks010: document.getElementById("remarks010").value,
+
+remarks11: document.getElementById("remarks11").value,
+clr: document.getElementById("clr").value,
+remarks12: document.getElementById("remarks12").value,
+clr2: document.getElementById("clr2").value,
+remarks13: document.getElementById("remarks13").value,
+axle: document.getElementById("axle").value,
+remarks14: document.getElementById("remarks14").value,
+clr45N: document.getElementById("clr45N").value,
+remarks15: document.getElementById("remarks15").value,
+ens: document.getElementById("ens").value,
+remarks16: document.getElementById("remarks16").value,
+o450: document.getElementById("o450").value,
+
+
+tightness70: document.getElementById("tightness70").value,
+  tightness71: document.getElementById("tightness71").value,
+  tightness72: document.getElementById("tightness72").value,
+  tightness73: document.getElementById("tightness73").value,
+  tightness74: document.getElementById("tightness74").value,
+  tightness75: document.getElementById("tightness75").value,
+  tightness76: document.getElementById("tightness76").value,
+  tightness77: document.getElementById("tightness77").value,
+  tightness78: document.getElementById("tightness78").value,
+  tightness79: document.getElementById("tightness79").value,
+
+abc: document.getElementById("abc").value,
+remarks17: document.getElementById("remarks17").value,
+a10sq: document.getElementById("a10sq").value,
+remarks18: document.getElementById("remarks18").value,
+cal: document.getElementById("cal").value,
+remarks19: document.getElementById("remarks19").value,
+a54v: document.getElementById("a54v").value,
+remarks20: document.getElementById("remarks20").value,
+r30V: document.getElementById("r30V").value,
+remarks21: document.getElementById("remarks21").value,
+r10mV: document.getElementById("r10mV").value,
+remarks22: document.getElementById("remarks22").value,
+clearance90: document.getElementById("clearance90").value,
+remarks90: document.getElementById("remarks90").value,
+clearance91: document.getElementById("clearance91").value,
+remarks91: document.getElementById("remarks91").value,
+clearance92: document.getElementById("clearance92").value,
+remarks92: document.getElementById("remarks92").value,
+clearance93: document.getElementById("clearance93").value,
+remarks93: document.getElementById("remarks93").value,
+clearance94: document.getElementById("clearance94").value,
+remarks94: document.getElementById("remarks94").value,
+clearance95: document.getElementById("clearance95").value,
+remarks95: document.getElementById("remarks95").value,
+clearance96: document.getElementById("clearance96").value,
+remarks96: document.getElementById("remarks96").value,
+ok: document.getElementById("ok").value,
+remarks23: document.getElementById("remarks23").value,
+s1: document.getElementById("s1").value,
+remarks24: document.getElementById("remarks24").value,
+s2: document.getElementById("s2").value,
+remarks25: document.getElementById("remarks25").value,
+s3: document.getElementById("s3").value,
+remarks26: document.getElementById("remarks26").value,
+s4: document.getElementById("s4").value,
+remarks27: document.getElementById("remarks27").value,
+s5: document.getElementById("s5").value,
+remarks28: document.getElementById("remarks28").value,
+s6: document.getElementById("s6").value,
+remarks29: document.getElementById("remarks29").value,
+s7: document.getElementById("s7").value,
+remarks30: document.getElementById("remarks30").value,
+s8: document.getElementById("s8").value,
+remarks31: document.getElementById("remarks31").value,
+s9: document.getElementById("s9").value,
+remarks32: document.getElementById("remarks32").value,
+s10: document.getElementById("s10").value,
+remarks33: document.getElementById("remarks33").value,
+s11: document.getElementById("s11").value,
+remarks34: document.getElementById("remarks34").value,
+s12: document.getElementById("s12").value,
+remarks35: document.getElementById("remarks35").value,
+s13: document.getElementById("s13").value,
+remarks36: document.getElementById("remarks36").value
+
+
+
+                                            })
+                                        });
+        
+                            
+                                        if (response.ok) {
+                                            // If successful, download the PDF
+                                            const pdfBlob = await response.blob();
+                                            const url = window.URL.createObjectURL(pdfBlob);
+                                            const a = document.createElement('a');
+                                            a.href = url;
+                                            a.download = 'form_submission.pdf';
+                                            document.body.appendChild(a);
+                                            a.click();
+                                            window.URL.revokeObjectURL(url);
+                                            document.body.removeChild(a);
+                                        } else {
+                                            // If there's an error, display an alert
+                                            alert('Failed to generate PDF');
+                                        }
+                                    }
+                                });
+                            </script>
+        </body>
+        </html>        
+   
