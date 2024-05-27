@@ -8,7 +8,13 @@ const port = 3000;
 
 // Middleware to parse JSON bodies
 app.use(express.json());
-
+// Middleware to enable CORS
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Allow requests from any origin
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // Allow specified HTTP methods
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Allow specified headers
+  next();
+});
 // Serve the HTML form with form validation
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'oveall2-12.html'));
